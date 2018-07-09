@@ -81,6 +81,12 @@ this.def["txMaxTime"] = {file: "xpctimeinfo_c.html",line:297,type:"fcn"};
 this.def["txMaxTime"] = {file: "xpctimeinfo_c.html",line:297,type:"fcn"};
 this.def["txMaxTime"] = {file: "xpctimeinfo_c.html",line:297,type:"fcn"};
 this.def["txMaxTime"] = {file: "xpctimeinfo_c.html",line:297,type:"fcn"};
+this.def["txMaxTime"] = {file: "RTGETINF_C.html",line:297,type:"fcn"};
+this.def["txMaxTime"] = {file: "RTGETINF_C.html",line:297,type:"fcn"};
+this.def["txMaxTime"] = {file: "RTGETINF_C.html",line:297,type:"fcn"};
+this.def["txMaxTime"] = {file: "RTGETINF_C.html",line:297,type:"fcn"};
+this.def["endif"] = {file: "RTGETNAN_C.html",line:31,type:"fcn"};
+this.def["endif"] = {file: "RTGETNAN_C.html",line:31,type:"fcn"};
 this.def["xmlecatArr_0_count"] = {file: "ecat_config_xml_0_c.html",line:1,type:"var"};
 this.def["xmlecatArr_0"] = {file: "ecat_config_xml_0_c.html",line:2,type:"var"};
 }
@@ -128,6 +134,14 @@ function Html2SrcLink() {
 	this.html2Root["xpcethercatsetstate_c.html"] = "xpcethercatsetstate_c.html";
 	this.html2SrcPath["xpctimeinfo_c.html"] = "file:///C:/Program%20Files/MATLAB/R2017b/toolbox/rtw/targets/xpc/target/build/xpcblocks/xpctimeinfo.c";
 	this.html2Root["xpctimeinfo_c.html"] = "xpctimeinfo_c.html";
+	this.html2SrcPath["RTGETINF_C.html"] = "../RTGETINF.C";
+	this.html2Root["RTGETINF_C.html"] = "RTGETINF_C.html";
+	this.html2SrcPath["RTGETINF_H.html"] = "../RTGETINF.H";
+	this.html2Root["RTGETINF_H.html"] = "RTGETINF_H.html";
+	this.html2SrcPath["RTGETNAN_C.html"] = "../RTGETNAN.C";
+	this.html2Root["RTGETNAN_C.html"] = "RTGETNAN_C.html";
+	this.html2SrcPath["RTGETNAN_H.html"] = "../RTGETNAN.H";
+	this.html2Root["RTGETNAN_H.html"] = "RTGETNAN_H.html";
 	this.html2SrcPath["ecat_config_xml_0_c.html"] = "../../ecat_config_xml_0.c";
 	this.html2Root["ecat_config_xml_0_c.html"] = "ecat_config_xml_0_c.html";
 	this.getLink2Src = function (htmlFileName) {
@@ -145,4 +159,4 @@ function Html2SrcLink() {
 }
 Html2SrcLink.instance = new Html2SrcLink();
 var fileList = [
-"ert_main_c.html","AcquireAngleAmicSimple_4kHz_M2017b_c.html","AcquireAngleAmicSimple_4kHz_M2017b_h.html","AcquireAngleAmicSimple_4kHz_M2017b_private_h.html","AcquireAngleAmicSimple_4kHz_M2017b_types_h.html","AcquireAngleAmicSimple_4kHz_M2017b_data_c.html","rtGetInf_c.html","rtGetInf_h.html","rtGetNaN_c.html","rtGetNaN_h.html","rt_nonfinite_c.html","rt_nonfinite_h.html","rtwtypes_h.html","xpcethercatgetstate_c.html","xpcethercatpdorx_c.html","xpcethercatpdotx_c.html","xpcethercatsetstate_c.html","xpctimeinfo_c.html","ecat_config_xml_0_c.html"];
+"ert_main_c.html","AcquireAngleAmicSimple_4kHz_M2017b_c.html","AcquireAngleAmicSimple_4kHz_M2017b_h.html","AcquireAngleAmicSimple_4kHz_M2017b_private_h.html","AcquireAngleAmicSimple_4kHz_M2017b_types_h.html","AcquireAngleAmicSimple_4kHz_M2017b_data_c.html","rtGetInf_c.html","rtGetInf_h.html","rtGetNaN_c.html","rtGetNaN_h.html","rt_nonfinite_c.html","rt_nonfinite_h.html","rtwtypes_h.html","xpcethercatgetstate_c.html","xpcethercatpdorx_c.html","xpcethercatpdotx_c.html","xpcethercatsetstate_c.html","xpctimeinfo_c.html","RTGETINF_C.html","RTGETINF_H.html","RTGETNAN_C.html","RTGETNAN_H.html","ecat_config_xml_0_c.html"];

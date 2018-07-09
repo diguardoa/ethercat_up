@@ -7,12 +7,12 @@
  *
  * Code generated for Simulink model 'AcquireAngleAmicSimple_4kHz_M2017b'.
  *
- * Model version                  : 1.1049
+ * Model version                  : 1.1052
  * Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
- * C/C++ source code generated on : Mon Jul  9 16:26:15 2018
+ * C/C++ source code generated on : Mon Jul  9 14:52:50 2018
  *
  * Target selection: ert.tlc
- * Embedded hardware selection: Generic->32-bit x86 compatible
+ * Embedded hardware selection: Intel->x86-64 (Linux 64)
  * Code generation objectives: Unspecified
  * Validation result: Not run
  */
@@ -42,14 +42,14 @@ typedef void * pointer_T;
 #ifndef INT64_T
 #define INT64_T
 
-typedef long long int64_T;
+typedef long int64_T;
 
 #endif
 
 #ifndef UINT64_T
 #define UINT64_T
 
-typedef unsigned long long uint64_T;
+typedef unsigned long uint64_T;
 
 #endif
 

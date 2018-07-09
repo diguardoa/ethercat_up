@@ -1,4 +1,4 @@
-call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\VCVARSALL.BAT " amd64
+call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\VCVARSALL.BAT " amd64
 
 cd .
 nmake -f AcquireAngleAmicSimple_4kHz_M2017b.mk  GENERATE_ASAP2=0 OPTS="-DRT -DUSE_RTMODEL -DERT -DTID01EQ=1"

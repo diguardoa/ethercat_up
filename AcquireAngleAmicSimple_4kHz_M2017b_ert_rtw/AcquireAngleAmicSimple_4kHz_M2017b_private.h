@@ -7,12 +7,12 @@
  *
  * Code generated for Simulink model 'AcquireAngleAmicSimple_4kHz_M2017b'.
  *
- * Model version                  : 1.1049
+ * Model version                  : 1.1052
  * Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
- * C/C++ source code generated on : Mon Jul  9 16:26:15 2018
+ * C/C++ source code generated on : Mon Jul  9 14:52:50 2018
  *
  * Target selection: ert.tlc
- * Embedded hardware selection: Generic->32-bit x86 compatible
+ * Embedded hardware selection: Intel->x86-64 (Linux 64)
  * Code generation objectives: Unspecified
  * Validation result: Not run
  */
@@ -79,22 +79,11 @@ Verification pane for ERT based targets, which will disable the \
 preprocessor word size checks.
 #endif
 
-#if ( ULONG_MAX != (0xFFFFFFFFU) ) || ( LONG_MAX != (0x7FFFFFFF) )
-#error Code was generated for compiler with different sized ulong/long. \
-Consider adjusting Test hardware word size settings on the \
-Hardware Implementation pane to match your compiler word sizes as \
-defined in limits.h of the compiler. Alternatively, you can \
-select the Test hardware is the same as production hardware option and \
-select the Enable portable word sizes option on the Code Generation > \
-Verification pane for ERT based targets, which will disable the \
-preprocessor word size checks.
-#endif
-
 #if 0
 
 /* Skip this size verification because of preprocessor limitation */
-#if ( ULLONG_MAX != (0xFFFFFFFFFFFFFFFFULL) ) || ( LLONG_MAX != (0x7FFFFFFFFFFFFFFFLL) )
-#error Code was generated for compiler with different sized ulong_long/long_long. \
+#if ( ULONG_MAX != (0xFFFFFFFFFFFFFFFFUL) ) || ( LONG_MAX != (0x7FFFFFFFFFFFFFFFL) )
+#error Code was generated for compiler with different sized ulong/long. \
 Consider adjusting Test hardware word size settings on the \
 Hardware Implementation pane to match your compiler word sizes as \
 defined in limits.h of the compiler. Alternatively, you can \
