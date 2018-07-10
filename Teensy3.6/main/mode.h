@@ -12,4 +12,8 @@ PERCRO lab - Scuola Superiore Sant'Anna
 
 #define PWM_FREQUENCY 46875
 
+#define T10MS 10000
+#define T1S 1000000
+
+#define LED_COMMUNICATION A4
 #endif 

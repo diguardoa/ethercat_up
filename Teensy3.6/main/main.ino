@@ -14,12 +14,18 @@ PERCRO lab - Scuola Superiore Sant'Anna
 #include "sensor.h"
 #include "mode.h"
 
+IntervalTimer timer0;
+int startTimerValue0 = 0;
+
 Communication* network;
+
 
 void setup() {
   // put your setup code here, to run once:
 
   network = new Communication();
+
+  startTimerValue0 = timer0.begin(task_10ms, T1S);
 
 }
 
@@ -27,3 +33,8 @@ void loop() {
   // put your main code here, to run repeatedly:
 
 }
+
+void task_10ms() {
+  network->receive();
+}
+

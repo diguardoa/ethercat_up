@@ -25,14 +25,14 @@ private:
 	uint8_t workingMode;
 	int16_t sensor; // in this implementation we suppose there is only one sensor
 
-	uint8_t receive(void);
-
 public:
 	Communication(void);
 	void sendSensorValue(int16_t);
 	int16_t getOption(void);
 	uint8_t getWorkingMode(void);
 
+
+	uint8_t receive(void);
 
 
 	
