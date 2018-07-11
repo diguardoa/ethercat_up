@@ -10,5 +10,6 @@ PERCRO lab - Scuola Superiore Sant'Anna
 #define LOGIC_PERIOD 100
 #define TEENSY1_ADDR 0
 #define UP_PORT 8000
-#define TEENSY1_PORT 0
+#define TEENSY1_PORT 8010
+
 #endif

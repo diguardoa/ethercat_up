@@ -13,7 +13,8 @@ The constructor create the thread
 Logic::Logic() {
 	// set period
 	period = LOGIC_PERIOD;
-	teensy1 = new RemoteDevice(TEENSY1_ADDR,UP_PORT, TEENSY1_PORT);
+
+	teensy1 = new RemoteDevice("10.25.4.41",UP_PORT, TEENSY1_PORT);
 	// launch the thread
 	tret1 = pthread_create(&tid1, NULL, task, (void*)this);	
 
@@ -33,7 +34,13 @@ The function contains the code to be executed for each period
 */
 void Logic::runnable()
 {
-	printf("hi \n");
-	teensy1->receive();
-	
+	char buffer[256];
+	int n = teensy1->receive(buffer);
+	if (n>0)
+	{
+		printf("%d \n",n);
+		printf(buffer);
+		printf("\n");
+	}	
+	teensy1->send("aa", 2);
 }
