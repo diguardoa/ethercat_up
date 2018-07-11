@@ -7,8 +7,15 @@ PERCRO lab - Scuola Superiore Sant'Anna
 
 
 Communication::Communication(void) {
- 
-  IPAddress ip(IP_TEENSY_1);
+  pinMode(9,OUTPUT);
+  digitalWrite(9,LOW);
+  pinMode(10, OUTPUT);
+  digitalWrite(10, HIGH);
+  pinMode(4, OUTPUT);
+  digitalWrite(4, HIGH);
+  digitalWrite(9,HIGH); 
+  IPAddress ip2(10,25,4,40);
+  ip = ip2;
   Ethernet.begin(mac, ip);
   delay(70);
   localPort = PORT_TEENSY_1;
@@ -29,6 +36,10 @@ Communication::Communication(void) {
 
 uint8_t Communication::receive(void) {
 	static uint8_t state = 0;
+  
+  Udp.beginPacket(UP_IP, UP_PORT_1);
+  Udp.write("a");
+  Udp.endPacket();
 
 	if (state)
 	{

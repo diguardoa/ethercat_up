@@ -15,5 +15,8 @@ PERCRO lab - Scuola Superiore Sant'Anna
 #define T10MS 10000
 #define T1S 1000000
 
+#define UP_IP "10.25.4.30"
+#define UP_PORT_1 8000
+
 #define LED_COMMUNICATION A4
 #endif 
