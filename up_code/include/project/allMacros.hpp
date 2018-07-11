@@ -8,5 +8,7 @@ PERCRO lab - Scuola Superiore Sant'Anna
 #define ALLMACROS_H
 
 #define LOGIC_PERIOD 100
-
+#define TEENSY1_ADDR 0
+#define UP_PORT 8000
+#define TEENSY1_PORT 0
 #endif

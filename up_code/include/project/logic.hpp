@@ -11,13 +11,14 @@ PERCRO lab - Scuola Superiore Sant'Anna
 #include <pthread.h> 
 #include "project/threadFunctions.hpp"
 #include "project/allMacros.hpp"
+#include "project/remoteDevice.hpp"
 
 class Logic {
 private:
 	// thread-related variables
 	pthread_t tid1;
 	int tret1;
-	
+	RemoteDevice *teensy1;	
 public:
 	int period;
 	Logic();
