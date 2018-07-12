@@ -11,17 +11,21 @@ PERCRO lab - Scuola Superiore Sant'Anna
 #define LOGIC_H
 
 #include "mode.h"
+#include "motor.h"
+#include "sensor.h"
 
 class Logic {
 private:
+	Sensor* sensor1;
+	Sensor* sensor2;
+	Sensor* sensor3;
+	Sensor* sensor4;
 
-
+	Motor* motor;
 public:
-	// input function
-	uint8_t setInputs(int16_t, uint8_t);
-
-	//output function
-	int16_t getMotorCommand(void);
+	Logic(volatile uint16_t*, Motor*);
+	
+	uint8_t step(uint8_t mode, uint8_t data);
 };
 
 #endif

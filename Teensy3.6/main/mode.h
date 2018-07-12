@@ -19,4 +19,9 @@ PERCRO lab - Scuola Superiore Sant'Anna
 #define UP_PORT_1 8000
 
 #define LED_COMMUNICATION A4
+#define ADC_N 4
+
+
+#define PIN_M_A ((uint16_t) 2)
+#define PIN_M_B ((uint16_t) 3)
 #endif 

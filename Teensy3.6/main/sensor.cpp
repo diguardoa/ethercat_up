@@ -17,6 +17,6 @@ Sensor::Sensor(volatile uint16_t* mp) {
 /*
 The function simply return the value of the sensor
 */
-uint16_t Sensor::get_value() {
-	return (uint16_t) *memory_pointer;
+float Sensor::get_value() {
+	return (float) 1000*(4096-*memory_pointer)/(*memory_pointer);
 };

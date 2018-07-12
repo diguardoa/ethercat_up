@@ -19,6 +19,9 @@ private:
 	IPAddress ip;
 	IPAddress remote;
 	unsigned int localPort;
+	char packetBuffer[2];
+	char data;
+	char mode;
 	// Look in the documentation how to create multiple ports
 	//unsigned int out_localPort;
 	int16_t option;
@@ -32,10 +35,13 @@ public:
 	uint8_t getWorkingMode(void);
 
 
+	
+	// only for testing
+	uint8_t send(volatile uint16_t*, uint8_t);
 	uint8_t receive(void);
 
-
-	
+	uint8_t getData(void);
+	uint8_t getMode(void);
 };
 
 #endif

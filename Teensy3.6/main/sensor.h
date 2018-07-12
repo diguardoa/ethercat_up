@@ -20,7 +20,7 @@ protected:
 
 public:
 	Sensor(volatile uint16_t*);
-	uint16_t get_value();
+	float get_value();
 };
 
 #endif

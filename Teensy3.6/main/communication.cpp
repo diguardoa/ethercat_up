@@ -33,7 +33,7 @@ Communication::Communication(void) {
   digitalWrite(LED_COMMUNICATION, LOW);
 };
 
-
+/*
 uint8_t Communication::receive(void) {
 	static uint8_t state = 0;
   
@@ -53,4 +53,35 @@ uint8_t Communication::receive(void) {
 	}
 	return 0;
 }
+*/
+uint8_t Communication::send(volatile uint16_t* array, uint8_t size)
+{
+  Udp.beginPacket(UP_IP, UP_PORT_1);
+  for(int i=0; i<size; i++)
+  {
+    Udp.write(lowByte(array[i]));
+    Udp.write(highByte(array[i]));
+  } 
+  Udp.endPacket();
+}
 
+uint8_t Communication::receive(void) {
+  int packetSize = Udp.parsePacket();
+  if (packetSize) {
+    Udp.read(packetBuffer,2);
+    mode = packetBuffer[0];
+    data = packetBuffer[1];    
+    return 1;
+  }
+  return 0;
+}
+
+uint8_t Communication::getData(void)
+{
+  return data;
+}
+
+uint8_t Communication::getMode(void)
+{
+  return mode;
+}
