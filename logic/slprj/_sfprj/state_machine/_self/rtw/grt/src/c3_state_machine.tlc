@@ -1,0 +1,116 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  1 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   14 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "smooth_knobEventCounter"\
+      Description  "OutputEventCounter"\
+      SFName       ""\
+      Path         "smooth_knob"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "hard_knobEventCounter"\
+      Description  "OutputEventCounter"\
+      SFName       ""\
+      Path         "hard_knob"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "smooth_clutchEventCounter"\
+      Description  "OutputEventCounter"\
+      SFName       ""\
+      Path         "smooth_clutch"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "hard_clutchEventCounter"\
+      Description  "OutputEventCounter"\
+      SFName       ""\
+      Path         "hard_clutch"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "smooth_acceleratorEventCounter"\
+      Description  "OutputEventCounter"\
+      SFName       ""\
+      Path         "smooth_accelerator"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "hard_acceleratorEventCounter"\
+      Description  "OutputEventCounter"\
+      SFName       ""\
+      Path         "hard_accelerator"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_CLUTCH_and_KNOB"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "CLUTCH_and_KNOB"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Gear_changing_process"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "CLUTCH_and_KNOB.Gear_changing_process"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Wait_for_gear_change"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "CLUTCH_and_KNOB.Gear_changing_process.Wait_for_gear_change"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Wait_and_assist"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "CLUTCH_and_KNOB.Wait_and_assist"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_Wait_knob"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "CLUTCH_and_KNOB.Wait_and_assist.Wait_knob"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_ACCELERATOR"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "ACCELERATOR"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "completed"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "completed"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i1"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

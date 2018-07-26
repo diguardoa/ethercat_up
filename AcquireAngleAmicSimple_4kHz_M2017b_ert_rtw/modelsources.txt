@@ -1,1 +1,0 @@
-   AcquireAngleAmicSimple_4kHz_M2017b.c  ecat_config_xml_0.c 

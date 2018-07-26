@@ -1,0 +1,100 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   11 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "sfEvent"\
+      Description  "ActiveChartEvent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_active_c152_modello_2017b_levaRetro_acc"\
+      Description  "StateIsActive"\
+      SFName       "is_active_c152_modello_2017b_levaRetro_acc"\
+      Path         "is_active_c152_modello_2017b_levaRetro_acc"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_asse_x"\
+      Description  "StateActiveChild"\
+      SFName       "is_asse_x"\
+      Path         "asse_x.is_asse_x"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_asse_x"\
+      Description  "StateIsActive"\
+      SFName       "is_active_asse_x"\
+      Path         "asse_x.is_active_asse_x"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_asse_y"\
+      Description  "StateActiveChild"\
+      SFName       "is_asse_y"\
+      Path         "asse_y.is_asse_y"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_asse_y"\
+      Description  "StateIsActive"\
+      SFName       "is_active_asse_y"\
+      Path         "asse_y.is_active_asse_y"\
+      SrcLocation  ""\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "muro_dx"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "muro_dx"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "muro_sx"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "muro_sx"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "corsa_marcia_x"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "corsa_marcia_x"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "punto_marcia_innestata"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "punto_marcia_innestata"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "up_gear"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "up_gear"\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
