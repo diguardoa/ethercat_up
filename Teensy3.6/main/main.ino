@@ -63,6 +63,7 @@ void task_10ms() {
   network->send(adcbuffer_0,ADC_N);
 
   logic->step(network->getMode(),network->getData());
+//  logic->step(network->getMode(),200);
 }
 
 

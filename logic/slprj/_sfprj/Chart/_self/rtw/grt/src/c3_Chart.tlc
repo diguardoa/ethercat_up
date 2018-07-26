@@ -1,0 +1,67 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  1 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   7 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "smooth_knobEventCounter"\
+      Description  "OutputEventCounter"\
+      SFName       ""\
+      Path         "smooth_knob"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "hard_knobEventCounter"\
+      Description  "OutputEventCounter"\
+      SFName       ""\
+      Path         "hard_knob"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "smooth_clutchEventCounter"\
+      Description  "OutputEventCounter"\
+      SFName       ""\
+      Path         "smooth_clutch"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "hard_clutchEventCounter"\
+      Description  "OutputEventCounter"\
+      SFName       ""\
+      Path         "hard_clutch"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "smooth_acceleratorEventCounter"\
+      Description  "OutputEventCounter"\
+      SFName       ""\
+      Path         "smooth_accelerator"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "hard_acceleratorEventCounter"\
+      Description  "OutputEventCounter"\
+      SFName       ""\
+      Path         "hard_accelerator"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_c3_Chart"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

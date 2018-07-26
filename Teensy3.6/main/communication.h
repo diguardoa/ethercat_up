@@ -16,8 +16,8 @@ class Communication {
 private:
 	EthernetUDP Udp;
 	byte mac[12] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
-	IPAddress ip;
-	IPAddress remote;
+	IPAddress ip_s; 
+  IPAddress remote_IP_s;
 	unsigned int localPort;
 	char packetBuffer[2];
 	char data;

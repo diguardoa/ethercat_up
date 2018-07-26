@@ -14,9 +14,11 @@ Communication::Communication(void) {
   pinMode(4, OUTPUT);
   digitalWrite(4, HIGH);
   digitalWrite(9,HIGH); 
-  IPAddress ip2(10,25,4,40);
-  ip = ip2;
-  Ethernet.begin(mac, ip);
+  IPAddress ip(192,168,0,30); 
+  IPAddress remote_IP(192,168,0,2);
+  ip_s = ip;
+  remote_IP_s = remote_IP;
+  Ethernet.begin(mac, ip_s);
   delay(70);
   localPort = PORT_TEENSY_1;
   //out_localPort = OUT_PORT_TEENSY_1;
@@ -56,13 +58,26 @@ uint8_t Communication::receive(void) {
 */
 uint8_t Communication::send(volatile uint16_t* array, uint8_t size)
 {
-  Udp.beginPacket(UP_IP, UP_PORT_1);
+    static uint8_t state = 0;
+  Udp.beginPacket(remote_IP_s, UP_PORT_1);
   for(int i=0; i<size; i++)
   {
     Udp.write(lowByte(array[i]));
     Udp.write(highByte(array[i]));
   } 
   Udp.endPacket();
+/*
+  if (state)
+  {
+    digitalWrite(LED_COMMUNICATION,HIGH);
+    state = 0;
+  }
+  else
+  {
+    digitalWrite(LED_COMMUNICATION,LOW);
+    state = 1;
+  }
+  */
 }
 
 uint8_t Communication::receive(void) {
