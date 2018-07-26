@@ -6,13 +6,9 @@ PERCRO lab - Scuola Superiore Sant'Anna
 
 #include "logic.h"
 
-Logic::Logic(volatile uint16_t* memory, Motor* mot)
+Logic::Logic(Sensor* sens, Motor* mot)
 {
-	sensor1 = new Sensor(&memory[0]);
-	sensor2 = new Sensor(&memory[1]);
-	sensor3 = new Sensor(&memory[2]);
-	sensor4 = new Sensor(&memory[3]);
-
+	sensor1 = sens;
 	motor = mot; 
 }
 
@@ -22,9 +18,38 @@ uint8_t Logic::step(uint8_t mode, uint8_t data)
 	float val1 = sensor1->get_value();
 
 	// Elaborate
+	switch (mode) {
+		case 0:
+		// Command the PWM with data
+		motor->set_pwm(data);
+		break;
 
+		case 1:
+		// Smooth feedback
+		switch(data) {
+			case 0:
+			// test, continuous at 2.5 volt
+			uint8_t send_vibration = 130;
+			motor->set_pwm(send_vibration);
+			break;
+
+		}
+		break;
+
+		case 2:
+		// Hard feedback
+		switch(data) {
+			case 0:
+			// test, continuous at 5.0 volt
+			uint8_t send_vibration = 255;
+			motor->set_pwm(send_vibration);
+
+			break;
+		}
+		break;	
+	}
 
 	// Send Motor Commands
-	motor->set_pwm(data);
+	
 	return 1;
 }

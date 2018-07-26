@@ -20,8 +20,8 @@ private:
   IPAddress remote_IP_s;
 	unsigned int localPort;
 	char packetBuffer[2];
-	char data;
-	char mode;
+	uint8_t data;
+	uint8_t mode;
 	// Look in the documentation how to create multiple ports
 	//unsigned int out_localPort;
 	int16_t option;
@@ -42,6 +42,7 @@ public:
 
 	uint8_t getData(void);
 	uint8_t getMode(void);
+  void print_ip(void);
 };
 
 #endif

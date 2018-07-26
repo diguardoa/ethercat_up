@@ -1,0 +1,36 @@
+++++ PROTOCOL SPECIFICATION ++++
+file written by Antonio Di Guardo
+diguardoa@gmail.com - 2018
+
+++++
+This file specify the communication protocol between the device and the PC.
+The code is valid for all AsiaHaptics Challenge devices. Each devices is composed of
+
+- A Teensy 3.6
+- An H-Bridge
+- A wiz5500io (ethernet interface)
+- An Actuator
+- A pressure FSR
+++++
+
+COMMUNICATION - IN PACKETS
+
+size = 16 bytes
+
++++++++++++++++++++
++        +        +
++  MODE  +  PARAM +
++        +        +
++++++++++++++++++++
+
+Mode: 
+
+0x00	directly command the pwm $PARAM. pwm spreads from 0 and 255
+
+0x01	smooth feedback. $PARAM specifies the smoot vibration pattern
+		
+		0x00	test pattern (continuous, 2.5 volt)
+
+0x02	hard feedback. $PARAM specifies the hard vibration pattern
+
+		0x00	test pattern (continuous, 5 volt)

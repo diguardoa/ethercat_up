@@ -19,9 +19,13 @@ PERCRO lab - Scuola Superiore Sant'Anna
 IntervalTimer timer0;
 int startTimerValue0 = 0;
 
+IntervalTimer timer1;
+int startTimerValue1 = 0;
+
 Communication* network;
 Motor* motor;
 Logic* logic;
+Sensor* FSR;
 
 // ADC and DMA variables
 const uint16_t ChannelsCfg_0 [] =  {0x4E, 0x4C, 0x46, 0x45};
@@ -36,34 +40,42 @@ ADC *adc = new ADC();
 DMAChannel* dma0 = new DMAChannel(false);
 DMAChannel* dma1 = new DMAChannel(false);
 DMAMEM static volatile uint16_t adcbuffer_0[ADC_N];
-int dma0_cycles = 0;
+//int dma0_cycles = 0;
 
 
 void setup() {
   // put your setup code here, to run once:
-
+  Serial.begin(9600);
   network = new Communication();
   motor = new Motor(PIN_M_A,PIN_M_B);
-  logic = new Logic(adcbuffer_0,motor);
+  FSR = new Sensor(&adcbuffer_0[0]);
+  logic = new Logic(FSR,motor);
   
   setup_adc();
   setup_dma();
+  delay(100);
   startTimerValue0 = timer0.begin(task_10ms, T10MS);
+
+  startTimerValue1 = timer1.begin(task_1s, T1S);
 
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+}
 
+void task_1s() {
+  network->print_ip();
+  //motor->print_pwm();  
 }
 
 void task_10ms() {
   network->receive();
-  network->send(adcbuffer_0,ADC_N);
+  
+  network->send(adcbuffer_0,1);
 
   logic->step(network->getMode(),network->getData());
-//  logic->step(network->getMode(),200);
 }
 
 
@@ -134,7 +146,7 @@ void dma0_isr(void) {
     dma0->TCD->DADDR = &adcbuffer_0[0];
     dma0->clearInterrupt();
     dma0->enable();
-    dma0_cycles++;
+//    dma0_cycles++;
     // why? try without
     /*
     digitalWriteFast(4, HIGH);

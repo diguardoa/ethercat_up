@@ -13,7 +13,8 @@ Communication::Communication(void) {
   digitalWrite(10, HIGH);
   pinMode(4, OUTPUT);
   digitalWrite(4, HIGH);
-  digitalWrite(9,HIGH); 
+  digitalWrite(9,HIGH);
+  delay(100);
   IPAddress ip(192,168,0,30); 
   IPAddress remote_IP(192,168,0,1);
   ip_s = ip;
@@ -21,7 +22,6 @@ Communication::Communication(void) {
   Ethernet.begin(mac, ip_s);
   delay(70);
   localPort = PORT_TEENSY_1;
-  //out_localPort = OUT_PORT_TEENSY_1;
   Udp.begin(localPort);
   /*
   * init local variables
@@ -30,9 +30,12 @@ Communication::Communication(void) {
   workingMode = 0;
   sensor = 0;
 
+  mode = 0;
+  data = 0;
+
   // use a led on a pin to debug the behaviour
-  pinMode(LED_COMMUNICATION, OUTPUT);
-  digitalWrite(LED_COMMUNICATION, LOW);
+  //pinMode(LED_COMMUNICATION, OUTPUT);
+  //digitalWrite(LED_COMMUNICATION, LOW);
 };
 
 /*
@@ -82,7 +85,7 @@ uint8_t Communication::send(volatile uint16_t* array, uint8_t size)
 
 uint8_t Communication::receive(void) {
   int packetSize = Udp.parsePacket();
-  if (packetSize) {
+  while (packetSize>1) {
     Udp.read(packetBuffer,2);
     mode = packetBuffer[0];
     data = packetBuffer[1];    
@@ -100,3 +103,11 @@ uint8_t Communication::getMode(void)
 {
   return mode;
 }
+
+void Communication::print_ip(void)
+{
+  Serial.println(ip_s);
+//  Serial.println(data);
+ // Serial.println(mode);
+}
+

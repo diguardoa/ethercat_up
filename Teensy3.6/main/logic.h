@@ -17,13 +17,10 @@ PERCRO lab - Scuola Superiore Sant'Anna
 class Logic {
 private:
 	Sensor* sensor1;
-	Sensor* sensor2;
-	Sensor* sensor3;
-	Sensor* sensor4;
 
 	Motor* motor;
 public:
-	Logic(volatile uint16_t*, Motor*);
+	Logic(Sensor*, Motor*);
 	
 	uint8_t step(uint8_t mode, uint8_t data);
 };

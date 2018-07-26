@@ -44,4 +44,11 @@ void Motor::set_pwm(int16_t pwm) {
     analogWrite(pwm_pin1, final_pwm);
     analogWrite(pwm_pin2, 255);
   }
+  
+  saved_pwm = pwm;
 };
+
+void Motor::print_pwm(void) {
+  Serial.println(saved_pwm);
+}
+
