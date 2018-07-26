@@ -15,7 +15,7 @@ Communication::Communication(void) {
   digitalWrite(4, HIGH);
   digitalWrite(9,HIGH); 
   IPAddress ip(192,168,0,30); 
-  IPAddress remote_IP(192,168,0,2);
+  IPAddress remote_IP(192,168,0,1);
   ip_s = ip;
   remote_IP_s = remote_IP;
   Ethernet.begin(mac, ip_s);
